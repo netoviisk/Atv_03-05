@@ -1,0 +1,48 @@
+package solucao;
+
+import java.util.Locale;
+import java.util.Scanner;
+import entidade.Estudante;
+
+public class Aluguel {
+
+	public static void main(String[] args) {
+		Locale.forLanguageTag("pt-BR");
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.printf("Olá, Seja Bem-Vindo");
+		System.out.printf("Digite Quantos Quartos desejam alugar? (1 - 10): ");
+		int n = sc.nextInt();
+		String nome = null;
+		String email = null;
+		int quarto = 0;
+		for (int i = 0; i < n; i++) {
+			System.out.printf("Qual Quarto deseja Alugar? (1 - 10): ");
+			quarto = sc.nextInt();
+			Estudante[] veto = new Estudante[10];
+			if (veto[quarto] != null) {
+				System.out.printf("Quarto Cheio, Vamos Realocalo para o Quarto Acima!");
+				quarto = quarto++;
+				System.out.printf("Digite seu Nome: ");
+				nome = sc.nextLine();
+				System.out.printf("Digite seu E-mail: ");
+				email = sc.nextLine();
+				veto[i] = new Estudante(nome, email, quarto);
+			}
+			else {
+				System.out.printf("Digite seu Nome: ");
+				nome = sc.nextLine();
+				System.out.printf("Digite seu E-mail: ");
+				email = sc.nextLine();
+				veto[i] = new Estudante(nome, email, quarto);
+			}
+		}
+		for (int i = 1; i < n; i++) {
+			Estudante estudante = new Estudante(null, null, 0);
+			estudante.x(nome, email, quarto);
+		}
+		
+		sc.close();
+	}
+
+}
