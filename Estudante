@@ -1,0 +1,40 @@
+package entidade;
+
+public class Estudante {
+	
+	private String nome;
+	private String email;
+	private int quarto;
+	
+	public Estudante (String nome, String email, int quarto) {
+		this.nome = nome;
+		this.email = email;
+		this.quarto = quarto;
+	}
+	
+	public String getnome() {
+		   return nome;
+	 }
+	 public String setnome(String nome) {
+		   return this.nome = nome;
+	 }
+	 
+	 public String getemail() {
+		   return email;
+	 }
+	 public String setemail(String email) {
+		   return this.email = email;
+	 }
+	 
+	 public int getquarto() {
+		   return quarto;
+	 }
+	 public int setquarto(int quarto) {
+		   return this.quarto = quarto;
+	 }
+	 
+	 public void x (String nome,String email,int quarto) {
+		 System.out.format("Ficha: %d/%d/%d", nome, email, quarto) ;
+	 }
+
+}
